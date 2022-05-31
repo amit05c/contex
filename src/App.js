@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
+// import {useContext} from "react"
+import Navbar from "./components/Navbar";
+import Body from "./components/Body"
+import { CartProvider } from "./contex/CartContext";
+// import { CartContext } from "./contex/CartContext";
+
+
 
 function App() {
+  // const value= useContext(CartContext)
+  // console.log(value)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <CartProvider>
+   {/* {value} */}
+   <Navbar/>
+     <Body/>
+   </CartProvider>
+     
     </div>
   );
 }
